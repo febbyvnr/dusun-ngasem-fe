@@ -16,7 +16,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/data")
+    fetch("`${import.meta.env.VITE_API_URL}/api/data`")
       .then((res) => res.json())
       .then((data) => {
         if (data.umkm) setUmkm(data.umkm);
@@ -25,19 +25,19 @@ export default function App() {
   }, []);
 
   const handleSaveUMKM = () => {
-    fetch("http://localhost:5000/api/umkm", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/umkm`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     }).then(() => {
-      fetch("http://localhost:5000/api/data")
+      fetch(`${import.meta.env.VITE_API_URL}/api/data`)
         .then((res) => res.json())
         .then((data) => setUmkm(data.umkm));
     });
   };
 
   const handleSaveSambutan = () => {
-    fetch("http://localhost:5000/api/sambutan", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/sambutan`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(sambutan),

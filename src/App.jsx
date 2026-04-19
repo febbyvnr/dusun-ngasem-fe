@@ -3,49 +3,79 @@ import "./App.css";
 
 export default function App() {
   const [umkm, setUmkm] = useState([]);
-  const [form, setForm] = useState({
+  
+  const [displaySambutan, setDisplaySambutan] = useState({
+    video: "",
+    text: "",
+  });
+
+  const [formUMKM, setFormUMKM] = useState({
     nama: "",
     foto: "",
     notelp: "",
     alamat: "",
   });
 
-  const [sambutan, setSambutan] = useState({
+  const [formSambutan, setFormSambutan] = useState({
     video: "",
     text: "",
   });
 
-  useEffect(() => {
-    fetch("`${import.meta.env.VITE_API_URL}/api/data`")
+  const fetchData = () => {
+    fetch(`/api/data`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.umkm) setUmkm(data.umkm);
-        if (data.sambutan) setSambutan(data.sambutan);
+        if (data.umkm) {
+          setUmkm(data.umkm);
+          if (data.umkm.length > 0) {
+            setFormUMKM({
+              nama: data.umkm[0].nama || "",
+              foto: data.umkm[0].foto || "",
+              notelp: data.umkm[0].notelp || "",
+              alamat: data.umkm[0].alamat || "",
+            });
+          }
+        }
+        if (data.sambutan) {
+          setDisplaySambutan(data.sambutan);
+          setFormSambutan({
+            video: data.sambutan.video || "",
+            text: data.sambutan.text || "",
+          });
+        }
       });
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   const handleSaveUMKM = () => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/umkm`, {
+    fetch(`/api/umkm`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify(formUMKM),
     }).then(() => {
-      fetch(`${import.meta.env.VITE_API_URL}/api/data`)
-        .then((res) => res.json())
-        .then((data) => setUmkm(data.umkm));
+      fetchData();
+      setFormUMKM({ nama: "", foto: "", notelp: "", alamat: "" });
+      alert("UMKM Berhasil diperbarui!");
     });
   };
 
   const handleSaveSambutan = () => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/sambutan`, {
+    fetch(`/api/sambutan`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(sambutan),
+      body: JSON.stringify(formSambutan),
+    }).then(() => {
+      fetchData();
+      setFormSambutan({ ...formSambutan, text: "" });
+      alert("Sambutan Berhasil diperbarui!");
     });
   };
-
   return (
     <div className="page">
+      {/* SECTION UMKM */}
       <div className="section">
         <div className="header">
           <div className="header-left">TAMPILAN USER</div>
@@ -57,7 +87,7 @@ export default function App() {
             <div className="umkm-grid">
               {umkm.map((item, i) => (
                 <div className="card" key={i}>
-                  <img src={item.foto} alt="" />
+                  <img src={item.foto} alt="Foto UMKM" />
                   <h3>{item.nama}</h3>
                   <p>{item.notelp}</p>
                   <p>{item.alamat}</p>
@@ -69,23 +99,23 @@ export default function App() {
             <h2>Edit UMKM</h2>
             <input
               placeholder="Nama UMKM"
-              value={form.nama}
-              onChange={(e) => setForm({ ...form, nama: e.target.value })}
+              value={formUMKM.nama}
+              onChange={(e) => setFormUMKM({ ...formUMKM, nama: e.target.value })}
             />
             <input
               placeholder="Link Foto (Drive)"
-              value={form.foto}
-              onChange={(e) => setForm({ ...form, foto: e.target.value })}
+              value={formUMKM.foto}
+              onChange={(e) => setFormUMKM({ ...formUMKM, foto: e.target.value })}
             />
             <input
               placeholder="No Telp"
-              value={form.notelp}
-              onChange={(e) => setForm({ ...form, notelp: e.target.value })}
+              value={formUMKM.notelp}
+              onChange={(e) => setFormUMKM({ ...formUMKM, notelp: e.target.value })}
             />
             <input
               placeholder="Alamat"
-              value={form.alamat}
-              onChange={(e) => setForm({ ...form, alamat: e.target.value })}
+              value={formUMKM.alamat}
+              onChange={(e) => setFormUMKM({ ...formUMKM, alamat: e.target.value })}
             />
             <button onClick={handleSaveUMKM}>Update UMKM</button>
           </div>
@@ -100,34 +130,34 @@ export default function App() {
           <div className="box user">
             <h2>SAMBUTAN KEPALA DESA</h2>
             <div className="video-box">
-              <iframe
-                src={sambutan.video}
-                title="video"
-              />
+              {displaySambutan.video && (
+                <iframe
+                  src={displaySambutan.video.replace("watch?v=", "embed/")}
+                  title="video"
+                />
+              )}
             </div>
             <div className="desc-box">
-              {sambutan.text}
+              {displaySambutan.text}
             </div>
           </div>
           <div className="box admin">
             <h2>Edit Sambutan</h2>
             <input
               placeholder="Link YouTube"
-              value={sambutan.video}
+              value={formSambutan.video}
               onChange={(e) =>
-                setSambutan({ ...sambutan, video: e.target.value })
+                setFormSambutan({ ...formSambutan, video: e.target.value })
               }
             />
             <textarea
               placeholder="Isi sambutan"
-              value={sambutan.text}
+              value={formSambutan.text}
               onChange={(e) =>
-                setSambutan({ ...sambutan, text: e.target.value })
+                setFormSambutan({ ...formSambutan, text: e.target.value })
               }
             />
-            <button onClick={handleSaveSambutan}>
-              Update Sambutan
-            </button>
+            <button onClick={handleSaveSambutan}>Update Sambutan</button>
           </div>
         </div>
       </div>

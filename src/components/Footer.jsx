@@ -18,12 +18,11 @@ const Footer = () => {
             <ul>
               <li><a href="#beranda">Beranda</a></li>
               <li><a href="#profil">Profil</a></li>
-              <li><a href="#umkm">UMKM</a></li>
+              <li><a href="#potensi">Potensi</a></li>
             </ul>
             <ul>
-              <li><a href="#beranda">Beranda</a></li>
-              <li><a href="#profil">Profil</a></li>
               <li><a href="#umkm">UMKM</a></li>
+              <li><a href="#kontak">Kontak</a></li>
             </ul>
           </div>
         </div>

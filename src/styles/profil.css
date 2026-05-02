@@ -1,0 +1,513 @@
+.profil {
+    font-family: "Inter", sans-serif;
+    color: #333;
+}
+
+.sejarah {
+    padding: 80px 58px !important;
+}
+
+.sejarah-container {
+    display: grid;
+    grid-template-columns: 580px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.sejarah-img {
+    position: relative;
+    width: 580px;
+    height: 440px;
+}
+
+.sejarah-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+}
+
+.sejarah-img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d1fae5;
+    border-radius: 12px;
+    bottom: -20px;
+    right: -20px;
+    z-index: 1;
+}
+
+.sejarah-img::after {
+    transition: 0.3s;
+}
+
+.sejarah-img:hover::after {
+    bottom: -10px;
+    right: -10px;
+}
+
+.sejarah-text {
+    text-align: left;
+}
+
+.sejarah-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.sejarah-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #404943;
+    font-weight: 100 !important;
+    padding-top: 24px;
+}
+
+.profil-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding-top: 40px;
+}
+
+.profil-stats div {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #BFC9C1;
+}
+
+.profil-stats h3 {
+    font-size: 24px;
+}
+
+.profil-stats span {
+    font-size: 12px;
+    color: #666;
+}
+
+.visi {
+    background: #f9fafb;
+    padding: 80px 58px !important;
+    text-align: center;
+}
+
+.visi h2 {
+    font-size: 32px;
+    color: #1B1B1D;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #404943;
+    margin-bottom: 30px;
+}
+
+.visi-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.visi-card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #BFC9C1;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+
+.visi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border-color: #d1fae5;
+}
+
+.visi-card.main {
+    background: #14532d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visi-card.main:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(20, 83, 45, 0.35);
+}
+
+.visi-card i {
+    font-size: 38px;
+    color: white;
+}
+
+.visi-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.visi-card p {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300 !important
+}
+
+.mini-p {
+    font-size: 16px !important;
+    color: #404943;
+    font-weight: 300;
+    margin-top: 18px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.icon-box {
+    width: 36px;
+    height: 36px;
+    background: #B1F0CE;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box i {
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.geografis {
+    padding: 80px 58px !important;
+}
+
+.geo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    height: 520px;
+}
+
+.geo-batas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px;
+}
+
+.geo-batas i {
+    font-size: 24px;
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.geo-batas h3 {
+    width: 100%;
+    padding-bottom: 38px;
+    text-align: left;
+    color: var(--primary);
+}
+
+.geo-batas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.geo-batas ul li {
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.geo-batas ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2c7a7b;
+    font-weight: bold;
+}
+
+.geo-img {
+    position: relative;
+}
+
+.geo-img img {
+    height: 520px;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+    margin-bottom: -7px;
+}
+
+.geo-container {
+    transition: 0.3s;
+}
+
+.geo-container:hover {
+    transform: translateY(-4px);
+}
+
+.kunjungi {
+    padding: 90px 58px 140px 58px !important;
+}
+
+.kunjungi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    height: 520px;
+}
+
+.kunjungi-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px;
+}
+
+.kunjungi-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 650;
+    color: #1B1B1D;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 3px;
+}
+
+.info-text {
+    text-align: left;
+}
+
+.info-text span {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.8px;
+}
+
+.info-text p {
+    margin: 2px 0 0 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #404943;
+}
+
+.icon-box {
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.icon-box i {
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 2px;
+}
+
+.kunjungi-img {
+    position: relative;
+}
+
+.kunjungi-img img {
+    height: 520px;
+    width: 660px;
+    object-fit: cover;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: -7px;
+}
+
+.kunjungi-container {
+    transition: 0.3s;
+}
+
+.kunjungi-container:hover {
+    transform: translateY(-4px);
+}
+
+img {
+    max-width: auto;
+}
+
+@media (max-width: 767px) {
+    .sejarah, .visi, .geografis, .kunjungi {
+        padding: 40px 36px !important;
+    }
+    .sejarah-container, 
+    .geo-container, 
+    .kunjungi-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .sejarah-img {
+        width: 100%;
+        height: 250px;
+    }
+    .sejarah-img::after {
+        display: none;
+    }
+    .profil-stats {
+        grid-template-columns: 1fr;
+    }
+    .visi-grid {
+        grid-template-columns: 1fr;
+    }
+    .geo-img img, 
+    .kunjungi-img img {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px 12px 0 0;
+    }
+    .kunjungi-img {
+        order: -1;
+    }
+    .geo-batas, .kunjungi-info {
+        padding: 20px;
+    }
+    .geo-batas h3, .kunjungi-info h2 {
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .sejarah-container, 
+    .geo-container, 
+    .kunjungi-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        height: auto;
+        margin-bottom: -50px !important;
+    }
+    .kunjungi-container {
+        margin-bottom: 0px !important;
+    }
+    .sejarah-img {
+        width: 100%;
+        height: 350px;
+    }
+    .sejarah-text h2 {
+        font-size: 26px !important;
+        margin-bottom: -10px;
+    }
+    .sejarah-text p {
+        font-size: 12px;
+        margin-bottom: -10px;
+    }
+    .profil-stats h3 {
+        font-size: 20px;
+    }
+    .profil-stats span {
+        font-size: 10px;
+    }
+    .visi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .visi h2 {
+        font-size: 28px;
+    }
+    .geografis,
+    .kunjungi {
+        padding: 60px 36px !important;
+    }
+    .geo-container,
+    .kunjungi-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 24px;
+    }
+    .geo-img img,
+    .kunjungi-img img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .geo-img {
+        order: -1;
+    }
+    .kunjungi-img {
+        order: -1;
+    }
+    .geo-batas,
+    .kunjungi-info {
+        padding: 20px;
+    }
+    .geo-batas h3,
+    .kunjungi-info h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .sejarah-text h2 {
+        font-size: 28px;
+    }
+    .sejarah-text p {
+        font-size: 12px;
+        margin-bottom:-10px;
+    }
+    .profil-stats h3 {
+        font-size: 20px;
+    }
+    .profil-stats span {
+        font-size: 10px;
+    }
+    .geo-batas {
+        margin-left: -60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .visi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .visi-card.main {
+        grid-row: span 2;
+    }
+}

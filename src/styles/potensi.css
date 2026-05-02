@@ -1,0 +1,493 @@
+.potensi {
+    font-family: "Inter", sans-serif;
+}
+
+.potensi-baru {
+    padding: 80px 58px 30px 58px !important;
+    background: var(--bg);
+}
+
+.potensi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding: 0 58px;
+}
+
+.potensi-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    transition: all 0.25s ease;
+}
+
+.potensi-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+}
+
+.potensi-card:hover .potensi-icon {
+    transform: scale(1.1);
+    background: rgba(45, 106, 79, 0.15);
+}
+
+.potensi-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(45, 106, 79, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all 0.25s ease;
+}
+
+.potensi-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1B1B1D;
+    margin: 0;
+}
+
+.potensi-card p {
+    font-size: 16px;
+    color: #404943;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.potensi-section {
+    padding: 120px 58px !important;
+}
+
+.potensi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    text-align: left;
+}
+
+.potensi-container.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.text h2 {
+    font-size: 32px;
+    color: #1B1B1D;
+    padding-top: 15px;
+}
+
+.text p {
+    margin-top: 16px;
+    color: #404943;
+}
+
+.image img {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.badge {
+    background: #D1FAE5;
+    color: #0F5238;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.badge.center {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.potensi-chips {
+    margin-top: 15px;
+    display: flex;        /* biar rapi sejajar */
+    gap: 6px;             /* ganti margin-right */
+    flex-wrap: wrap;
+}
+
+.potensi-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #D1FAE5;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #0F5238;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.potensi-chip:hover {
+    background: #A7F3D0;
+    transform: translateY(-2px);
+}
+
+.potensi-chip svg {
+    display: block;
+}
+
+.potensi-chips span {
+    background: #D1FAE5;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-right: 5px;
+    color: #0F5238;
+}
+
+.peternakan-section {
+    padding: 40px 58px !important;
+}
+
+.horti {
+    text-align: center;
+    padding: 80px 58px !important;
+    background: #f9fafb;
+}
+
+.horti-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 58px;
+}
+
+.horti-card {
+    background: #f8f8f8;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.horti-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.horti-card:hover .horti-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.horti-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdecec;
+    color: #ef4444;
+    transition: all 0.3s ease;
+}
+
+.horti-card p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.horti-card:nth-child(2) .horti-icon {
+    background: #fef9c3;
+    color: #eab308;
+}
+
+.horti-card:nth-child(3) .horti-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.horti-card:nth-child(4) .horti-icon {
+    background: #ffedd5;
+    color: #f97316;
+}
+
+.badge-h2 {
+    color: #1B1B1D;
+    font-size: 32px;
+}
+
+.badge-subtitle {
+    color: #404943;
+    font-size: 16px;
+}
+
+.kesenian {
+    background: #14532d;
+    padding: 80px 58px 80px 58px !important;
+    color: white;
+}
+
+.kesenian-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 40px;
+}
+
+.kesenian-text .badge {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.kesenian-text h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.kesenian-text p {
+    margin-bottom: 48px;
+}
+
+.kesenian-text button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: #14532d;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.kesenian-text button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    opacity: 1;
+}
+
+.kesenian-img img {
+    width: 100%;
+    height: 360px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.image img,
+.kesenian-img img {
+    transition: transform 0.4s ease;
+}
+
+.image img:hover,
+.kesenian-img img:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .potensi-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        padding: 0 80px;
+    }
+    .potensi-card {
+        padding: 36px 28px;
+    }
+    .potensi-card h3 {
+        font-size: 22px;
+    }
+    .potensi-card p {
+        font-size: 17px;
+    }
+    .potensi-section {
+        padding: 140px 80px !important;
+    }
+    .potensi-container {
+        gap: 60px;
+    }
+    .text h2 {
+        font-size: 36px;
+    }
+    .text p {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+    .image img {
+        height: 380px;
+    }
+    .potensi-chip {
+        font-size: 15px;
+        padding: 6px 12px;
+    }
+    .horti {
+        padding: 100px 80px !important;
+    }
+    .horti-grid {
+        gap: 28px;
+        padding: 0 80px;
+    }
+    .horti-card {
+        padding: 36px 24px;
+    }
+    .horti-card p {
+        font-size: 20px;
+    }
+    .badge-h2 {
+        font-size: 36px;
+    }
+    .badge-subtitle {
+        font-size: 17px;
+    }
+    .kesenian {
+        padding: 100px 80px !important;
+    }
+    .kesenian-container {
+        gap: 60px;
+    }
+    .kesenian-text h2 {
+        font-size: 36px;
+    }
+    .kesenian-text p {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+    .kesenian-img img {
+        height: 420px;
+    }
+    .kesenian-text button {
+        font-size: 15px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .potensi-baru {
+        padding: 60px 20px 20px !important;
+    }
+    .potensi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+    .potensi-section {
+        padding: 80px 58px !important;
+    }
+    .potensi-container {
+        gap: 30px;
+    }
+    .text h2 {
+        font-size: 26px;
+    }
+    .text p {
+        font-size: 14px;
+    }
+    .horti {
+        padding: 60px 58px !important;
+    }
+    .horti-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 58px !important;
+    }
+    .badge-h2 {
+        font-size: 26px;
+    }
+    .badge-subtitle {
+        font-size: 14px;
+    }
+    .kesenian {
+        padding: 60px 58px !important;
+    }
+    .kesenian-text h2 {
+        font-size: 26px;
+    }
+    .kesenian-text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .potensi-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+    .potensi-card {
+        padding: 24px 18px;
+    }
+    .potensi-card h3 {
+        font-size: 18px;
+    }
+    .potensi-card p {
+        font-size: 14px;
+    }
+    .potensi-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .potensi-section {
+        padding: 60px 36px !important;
+    }
+    .peternakan-section {
+        padding: 40px 36px !important;
+    }
+    .text h2 {
+        font-size: 22px;
+    }
+    .text p {
+        font-size: 13px;
+    }
+    .image img {
+        height: 220px;
+    }
+    .potensi-chip {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    .horti {
+        padding: 50px 36px !important;
+    }
+    .horti-grid {
+        grid-template-columns: 1fr;
+        padding: 0 36px;
+    }
+    .horti-card {
+        padding: 24px;
+    }
+    .horti-card p {
+        font-size: 16px;
+    }
+    .badge-h2 {
+        font-size: 22px;
+    }
+    .badge-subtitle {
+        font-size: 13px;
+    }
+    .kesenian-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .kesenian-text h2 {
+        font-size: 22px;
+    }
+    .kesenian-text p {
+        font-size: 13px;
+    }
+    .kesenian-img img {
+        height: 240px;
+    }
+    .kesenian-text button {
+        width: 100%;
+        text-align: center;
+    }
+}

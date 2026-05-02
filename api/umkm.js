@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   }
   
   if (req.method === 'POST') {
-    const { id, nama, foto, notelp, alamat } = req.body;
+    const { id, nama, foto, notelp, alamat, deskripsi } = req.body;
     const { data, error } = await supabase
       .from('umkm')
       .upsert({ 
@@ -22,7 +22,8 @@ export default async function handler(req, res) {
         nama, 
         foto, 
         notelp, 
-        alamat 
+        alamat,
+        deskripsi
       })
       .select();
     if (error) return res.status(500).json({ error: error.message });

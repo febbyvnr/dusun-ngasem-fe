@@ -10,9 +10,9 @@ export default async function handler(req, res) {
     try {
       const { data, error } = await supabase
         .from("pengurus")
-        .select("id, nama, jabatan")
-        .eq("jabatan", "Pak Dukuh");
-
+        .select("id, nama, jabatan, notelp")
+        .or('jabatan.ilike.Ketua RT%,jabatan.eq.Pak Dukuh')
+        .order("jabatan", { ascending: true });
       if (error) {
         return res.status(500).json({ error: error.message });
       }

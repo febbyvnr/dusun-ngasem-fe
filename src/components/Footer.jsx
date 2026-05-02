@@ -34,8 +34,7 @@ const Footer = () => {
       </div>
       <div className="container footer-divider" />
       <div className="container footer-copyright">
-        © 2026 Padukuhan Ngasem. Seluruh Hak Cipta Dilindungi.<br />
-        Website ini dikembangkan sebagai program kerja KKN 89 Universitas Atma Jaya Yogyakarta.
+        © Copyright by KKN 89 UAJY Kelompok 10 2026, All Right Reserved.
       </div>
     </footer>
   );

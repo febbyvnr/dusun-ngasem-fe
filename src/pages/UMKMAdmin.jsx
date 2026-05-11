@@ -84,7 +84,10 @@ export default function UMKMAdmin() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    foto: convertDriveLink(formData.foto),
+                }),
             });
             setShowModal(false);
             fetchUMKM();
@@ -128,6 +131,14 @@ export default function UMKMAdmin() {
         start,
         start + perPage
     );
+
+    function convertDriveLink(url) {
+        const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+        if (match) {
+            return `https://drive.google.com/thumbnail?id=${match[1]}&szw=1000`;
+        }
+        return url;
+    }
 
     return (
         <div>
@@ -294,7 +305,7 @@ export default function UMKMAdmin() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>Foto URL</label>
+                                <label>Foto URL (Drive)</label>
                                 <input
                                     type="text"
                                     value={formData.foto}

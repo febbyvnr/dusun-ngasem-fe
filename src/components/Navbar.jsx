@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/navbar.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <NavLink to="/kontak" onClick={() => setIsOpen(false)}>Kontak</NavLink>
                 </nav>
                 {!isMobile && (
-                    <Link className="nav-cta" to="/kontak">Hubungi</Link>
+                    <NavLink className="nav-cta" to="/kontak">Hubungi</NavLink>
                 )}
             </div>
         </header>

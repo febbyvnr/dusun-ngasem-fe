@@ -33,10 +33,10 @@ export default async function handler(req, res) {
   }
   
   if (req.method === 'POST') {
-    const { video, text } = req.body;
+    const { text } = req.body;
     const { data, error } = await supabase
       .from('sambutan')
-      .update({ video, text })
+      .update({ text })
       .eq('id', 1)
       .select();
     if (error) {

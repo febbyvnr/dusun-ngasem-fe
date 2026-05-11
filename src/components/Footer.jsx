@@ -1,4 +1,5 @@
 import "../styles/footer.css";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,13 +17,14 @@ const Footer = () => {
           <h4>Tautan</h4>
           <div className="footer-links-grid">
             <ul>
-              <li><a href="#beranda">Beranda</a></li>
-              <li><a href="#profil">Profil</a></li>
-              <li><a href="#potensi">Potensi</a></li>
+              <li><NavLink to="/">Beranda</NavLink></li>
+              <li><NavLink to="/profil">Profil</NavLink></li>
+              <li><NavLink to="/potensi">Potensi</NavLink></li>
             </ul>
             <ul>
-              <li><a href="#umkm">UMKM</a></li>
-              <li><a href="#kontak">Kontak</a></li>
+              <li><NavLink to="/umkm">UMKM</NavLink></li>
+              <li><NavLink to="/kontak">Kontak</NavLink></li>
+              <li><NavLink to="/login">Login</NavLink></li>
             </ul>
           </div>
         </div>
@@ -34,7 +36,7 @@ const Footer = () => {
       </div>
       <div className="container footer-divider" />
       <div className="container footer-copyright">
-        © Copyright by KKN 89 UAJY Kelompok 10 2026, All Right Reserved.
+        © Copyright by KKN 89 Kelompok 10 UAJY 2026, All Right Reserved.
       </div>
     </footer>
   );

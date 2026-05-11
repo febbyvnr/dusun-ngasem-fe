@@ -132,8 +132,7 @@
   color: white;
   border-radius: 28px 28px 0px 0px;
   padding: 60px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  display: flex;
   gap: 40px;
   align-items: center;
 }

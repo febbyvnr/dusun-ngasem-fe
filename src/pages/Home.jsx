@@ -134,9 +134,6 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="about-image">
-                        <img src={profileImg} alt="Profil Dukuh Ngasem" />
-                    </div>
                 </div>
             </section>
             <section className="potential reveal" id="potensi">

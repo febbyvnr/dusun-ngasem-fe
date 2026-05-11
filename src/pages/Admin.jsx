@@ -152,7 +152,6 @@ export default function Admin() {
                         </div>
                         <div className="sambutan-card">
                             <div className="section-title">
-                                <i className="bi bi-youtube"></i>
                                 <h3>Sambutan</h3>
                             </div>
                             <div className="form-group">

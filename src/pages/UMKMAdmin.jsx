@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { createPortal } from "react-dom";
 import "../styles/umkmadmin.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -7,7 +8,7 @@ export default function UMKMAdmin() {
     const [umkm, setUmkm] = useState([]);
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
-    const perPage = 15;
+    const perPage = 10;
     const [showModal, setShowModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [selectedUMKM, setSelectedUMKM] = useState(null);
@@ -24,6 +25,15 @@ export default function UMKMAdmin() {
         fetchUMKM();
     }, []);
 
+    useEffect(() => {
+        if (showModal || showDeleteModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [showModal, showDeleteModal]);
+
     async function fetchUMKM() {
         try {
             const response = await fetch("/api/umkm");
@@ -35,6 +45,7 @@ export default function UMKMAdmin() {
     }
 
     function openAddModal() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setFormData({
             id: null,
             nama: "",
@@ -47,6 +58,7 @@ export default function UMKMAdmin() {
     }
 
     function openEditModal(item) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setFormData({
             id: item.id,
             nama: item.nama || "",
@@ -56,6 +68,12 @@ export default function UMKMAdmin() {
             deskripsi: item.deskripsi || "",
         });
         setShowModal(true);
+    }
+
+    function openDeleteModal(item) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setSelectedUMKM(item);
+        setShowDeleteModal(true);
     }
 
     async function saveUMKM() {
@@ -73,11 +91,6 @@ export default function UMKMAdmin() {
         } catch (error) {
             console.log(error);
         }
-    }
-
-    function openDeleteModal(item) {
-        setSelectedUMKM(item);
-        setShowDeleteModal(true);
     }
 
     async function handleDelete() {
@@ -151,7 +164,7 @@ export default function UMKMAdmin() {
                         <thead>
                             <tr>
                                 <th>FOTO</th>
-                                <th>NAMA UMKM</th>
+                                <th>NAMA</th>
                                 <th>TELEPON</th>
                                 <th>ALAMAT</th>
                                 <th>DESKRIPSI</th>
@@ -247,7 +260,7 @@ export default function UMKMAdmin() {
                     </div>
                 </div>
             </div>
-            {showModal && (
+            {showModal && createPortal (
                 <div className="modal-overlay">
                     <div className="modal-box">
                         <div className="modal-header">
@@ -354,9 +367,10 @@ export default function UMKMAdmin() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
-            {showDeleteModal && (
+            {showDeleteModal && createPortal (
                 <div className="modal-overlay">
                     <div className="delete-modal">
                         <div className="delete-icon">
@@ -390,7 +404,8 @@ export default function UMKMAdmin() {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </div>
     );

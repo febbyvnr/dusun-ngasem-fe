@@ -12,8 +12,8 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (
-            username === "username" &&
-            password === "password"
+            username === "admngasem2026" &&
+            password === "6D2A@M892"
         ) {
             navigate("/admin");
         } else {

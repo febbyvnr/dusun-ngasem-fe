@@ -258,7 +258,7 @@
 .kesenian-text h2 {
     font-size: 32px;
     margin-bottom: 24px;
-    color: white;
+    color: white !important;
 }
 
 .kesenian-text p {

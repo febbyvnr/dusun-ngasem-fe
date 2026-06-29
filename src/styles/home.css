@@ -41,7 +41,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   font-size: 13px;
-  color: white;
+  color: white !important;
 }
 
 .hero h1 {
@@ -146,7 +146,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #e7f0eb;
+  color: #e7f0eb !important;
   margin-bottom: 16px;
 }
 

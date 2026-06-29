@@ -114,7 +114,8 @@ export default function Admin() {
                 <div className="admin-layout">
                     <div className="admin-left">
                         <div className="profile-card">
-                            <div className="profile-banner"></div>
+                            <div className="profile-banner">
+                            </div>
                             <h2>Profil Pak Dukuh</h2>
                             <div className="form-group">
                                 <label>Nama Lengkap</label>
@@ -185,6 +186,10 @@ export default function Admin() {
                             </div>
                             <div className="rt-header-right">
                                 <NavLink to="/umkmadmin" className="btn-switch">UMKM</NavLink>
+                                <NavLink to="/" className="btn-logout">
+                                    <i className="bi bi-box-arrow-left"></i>
+                                    Logout
+                                </NavLink>
                                 <span>
                                     Total {rtList.length} Unit RT
                                 </span>

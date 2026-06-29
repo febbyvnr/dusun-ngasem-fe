@@ -40,7 +40,7 @@ body {
     background: rgba(0, 80, 40, 0.5);
     padding: 40px;
     text-align: center;
-    color: white;
+    color: white !important;
     width: 100%;
     height: 100%;
     display: flex;
@@ -51,7 +51,6 @@ body {
 
 .section-badge {
     background: #a7f3d0;
-    color: white;
     color: var(--primary);
     padding: 4px 12px;
     border-radius: 20px;
@@ -75,8 +74,6 @@ body {
     will-change: transform;
 }
 
-
-
 .admin-hero {
     background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
         center/cover no-repeat;
@@ -90,7 +87,7 @@ body {
     background: rgba(0, 80, 40, 0.5);
     padding: 40px;
     text-align: center;
-    color: white;
+    color: white !important;
     width: 100%;
     height: 100%;
     display: flex;

@@ -77,7 +77,7 @@ const Potensi = () => {
                             menghasilkan gabah berkualitas tinggi secara berkelanjutan.
                         </p>
                         <div className="potensi-chips">
-                            <span className="potensi-chip"><Sprout size={14} />Sawah</span>
+                            <span className="potensi-chip"><Sprout size={14} />Padi</span>
                             <span className="potensi-chip"><Bean size={14} />Kacang</span>
                             <span className="potensi-chip"><Bean size={14} />Kedelai</span>
                         </div>
@@ -117,15 +117,15 @@ const Potensi = () => {
                 <div className="horti-grid">
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Rambutan</p>
+                        <p>Melon</p>
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Mangga</p>
+                        <p>Jeruk</p>
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Alpukat</p>
+                        <p>Semangka</p>
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>

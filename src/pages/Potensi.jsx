@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/potensi.css";
 import { Music, Sprout, Beef, Bean, Vegan } from "lucide-react";
+import sanggarTari from "../assets/sanggar-tari.png";
 
 const Potensi = () => {
     useEffect(() => {
@@ -83,7 +84,7 @@ const Potensi = () => {
                         </div>
                     </div>
                     <div className="image">
-                        <img src={require("../assets/sanggar-tari.png")} />
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" />
                     </div>
                 </div>
             </section>
@@ -152,7 +153,7 @@ const Potensi = () => {
                         </a>
                     </div>
                     <div className="kesenian-img">
-                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=1000&auto=format&fit=crop" />
+                        <img src={sanggarTari} alt="Sanggar Tari" />
                     </div>
                 </div>
             </section>

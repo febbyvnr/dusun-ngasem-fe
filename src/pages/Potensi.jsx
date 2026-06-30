@@ -83,7 +83,7 @@ const Potensi = () => {
                         </div>
                     </div>
                     <div className="image">
-                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" />
+                        <img src={require("../assets/sanggar-tari.png")} />
                     </div>
                 </div>
             </section>

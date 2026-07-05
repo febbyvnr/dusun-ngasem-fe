@@ -8,38 +8,19 @@ const supabase = createClient(
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      const {
-        id,
-        nama,
-        jabatan,
-        notelp,
-      } = req.body;
-
+      const {id, nama, jabatan, notelp} = req.body;
       const { data, error } = await supabase
         .from("pengurus")
-        .update({
-          nama,
-          jabatan,
-          notelp,
-        })
+        .update({nama, jabatan, notelp})
         .eq("id", id)
         .select();
-
       if (error) {
-        return res
-          .status(500)
-          .json({ error: error.message });
+        return res.status(500).json({ error: error.message });
       }
-
       return res.status(200).json(data);
     } catch (error) {
-      return res
-        .status(500)
-        .json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     }
   }
-
-  return res
-    .status(405)
-    .json({ error: "Method not allowed" });
+  return res.status(405).json({ error: "Method not allowed" });
 }

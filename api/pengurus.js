@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       const { data, error } = await supabase
         .from("pengurus")
         .select("id, nama, jabatan, notelp")
-        .or('jabatan.ilike.Ketua RT%,jabatan.eq.Pak Dukuh')
+        .or('jabatan.ilike.Ketua RT%,jabatan.eq.Pak Dukuh,jabatan.eq.Ketua RW')
         .order("jabatan", { ascending: true });
       if (error) {
         return res.status(500).json({ error: error.message });

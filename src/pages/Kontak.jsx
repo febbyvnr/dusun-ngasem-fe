@@ -4,6 +4,7 @@ import "../styles/kontak.css";
 const Kontak = () => {
     const [dataRT, setDataRT] = useState([]);
     const [dukuh, setDukuh] = useState(null);
+    const [ketuaRW, setKetuaRW] = useState(null);
 
     useEffect(() => {
         const elements = document.querySelectorAll(".reveal");
@@ -25,10 +26,14 @@ const Kontak = () => {
                 const dukuhData = data.find(
                     (item) => item.jabatan === "Pak Dukuh"
                 );
+                const rwData = data.find(
+                    (item) => item.jabatan === "Ketua RW"
+                );
                 const rtData = data.filter((item) =>
                     item.jabatan.includes("Ketua RT")
                 );
                 setDukuh(dukuhData);
+                setKetuaRW(rwData);
                 setDataRT(rtData);
             } catch (err) {
                 console.error(err);
@@ -97,13 +102,29 @@ const Kontak = () => {
                 </div>
                 <div className="card reveal">
                     <div className="card-icon">
-                        <i className="bi bi-clock"></i>
+                        <i className="bi bi-people"></i>
                     </div>
-                    <h3>Waktu Layanan</h3>
-                    <p>
-                        Senin - Jumat: 08:00 - 16:00<br />
-                        Sabtu: 08:00 - 12:00
-                    </p>
+                    <h3>Ketua RW</h3>
+                    {ketuaRW ? (
+                        <>
+                            <p>
+                                {ketuaRW.nama}
+                                <br />
+                                {ketuaRW.notelp}
+                            </p>
+                            <a
+                                href={`https://wa.me/${formatWA(ketuaRW.notelp)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rt-wa"
+                            >
+                                <i className="bi bi-chat-left-text"></i>
+                                WhatsApp Ketua RW
+                            </a>
+                        </>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
                 </div>
             </section>
             <section className="rt-section reveal">

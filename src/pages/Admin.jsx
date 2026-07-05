@@ -10,18 +10,23 @@ export default function Admin() {
         notelp: "",
         jabatan: "Pak Dukuh",
     });
-
+    const [ketuaRW, setKetuaRW] = useState({
+        id: null,
+        nama: "",
+        notelp: "",
+        jabatan: "Ketua RW",
+    });
+    const rwData = data.find(
+        (item) => item.jabatan === "Ketua RW"
+    );
     const [rtList, setRtList] = useState([]);
-
     const [sambutan, setSambutan] = useState({
         text: "",
     });
-
     useEffect(() => {
         fetchPengurus();
         fetchSambutan();
     }, []);
-
     async function fetchPengurus() {
         try {
             const response = await fetch("/api/pengurus");
@@ -40,7 +45,6 @@ export default function Admin() {
             console.log(error);
         }
     }
-
     async function fetchSambutan() {
         try {
             const response = await fetch("/api/sambutan");
@@ -52,7 +56,6 @@ export default function Admin() {
             console.log(error);
         }
     }
-
     async function saveDukuh() {
         try {
             await fetch("/api/update-pengurus", {
@@ -67,7 +70,20 @@ export default function Admin() {
             console.log(error);
         }
     }
-
+    async function saveRW() {
+        try {
+            await fetch("/api/update-pengurus", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(ketuaRW),
+            });
+            alert("Ketua RW berhasil diperbarui");
+        } catch (error) {
+            console.log(error);
+        }
+    }
     async function saveRT(rt) {
         try {
             await fetch("/api/update-pengurus", {
@@ -82,7 +98,6 @@ export default function Admin() {
             console.log(error);
         }
     }
-
     async function saveSambutan() {
         try {
             await fetch("/api/sambutan", {
@@ -97,7 +112,6 @@ export default function Admin() {
             console.log(error);
         }
     }
-
     return (
             <div className="admin-page">
                 <section className="admin-hero">
@@ -179,6 +193,44 @@ export default function Admin() {
                         </div>
                     </div>
                     <div className="admin-right">
+                        <div className="rw-section">
+                            <div className="rt-title-left">
+                                <i className="bi bi-person-badge-fill"></i>
+                                <h2>Manajemen Ketua RW</h2>
+                            </div>
+                            <div className="rw-card">
+                                <div className="form-group">
+                                    <label>Nama Lengkap</label>
+                                    <input
+                                        type="text"
+                                        value={ketuaRW.nama || ""}
+                                        onChange={(e) =>
+                                            setKetuaRW({
+                                                ...ketuaRW,
+                                                nama: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>Nomor Telepon</label>
+                                    <input
+                                        type="text"
+                                        value={ketuaRW.notelp || ""}
+                                        onChange={(e) =>
+                                            setKetuaRW({
+                                                ...ketuaRW,
+                                                notelp: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </div>
+                                <button className="save-btn" onClick={saveRW}>
+                                    <i className="bi bi-check-circle"></i>
+                                    Simpan Ketua RW
+                                </button>
+                            </div>
+                        </div>
                         <div className="rt-header">
                             <div className="rt-title-left">
                                 <i className="bi bi-people-fill"></i>

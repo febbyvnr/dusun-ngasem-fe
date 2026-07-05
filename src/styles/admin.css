@@ -134,6 +134,27 @@
   gap: 22px;
 }
 
+.rw-section {
+  margin-bottom: 32px;
+}
+
+.rw-card {
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: end;
+}
+
+.rw-card .save-btn {
+  white-space: nowrap;
+  height: 52px;
+}
+
 .rt-header {
   display: flex;
   align-items: center;

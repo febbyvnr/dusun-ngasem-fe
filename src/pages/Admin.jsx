@@ -16,9 +16,6 @@ export default function Admin() {
         notelp: "",
         jabatan: "Ketua RW",
     });
-    const rwData = data.find(
-        (item) => item.jabatan === "Ketua RW"
-    );
     const [rtList, setRtList] = useState([]);
     const [sambutan, setSambutan] = useState({
         text: "",
@@ -34,11 +31,17 @@ export default function Admin() {
             const dukuhData = data.find(
                 (item) => item.jabatan === "Pak Dukuh"
             );
+            const rwData = data.find(
+                (item) => item.jabatan === "Ketua RW"
+            );
             const rtData = data.filter((item) =>
                 item.jabatan?.includes("Ketua RT")
             );
             if (dukuhData) {
                 setDukuh(dukuhData);
+            }
+            if (rwData) {
+                setKetuaRW(rwData);
             }
             setRtList(rtData);
         } catch (error) {
@@ -194,9 +197,20 @@ export default function Admin() {
                     </div>
                     <div className="admin-right">
                         <div className="rw-section">
-                            <div className="rt-title-left">
-                                <i className="bi bi-person-badge-fill"></i>
-                                <h2>Manajemen Ketua RW</h2>
+                            <div className="rt-header">
+                                <div className="rt-title-left">
+                                    <i className="bi bi-people-fill"></i>
+                                    <h2>Manajemen Ketua RW</h2>
+                                </div>
+                                <div className="rt-header-right">
+                                    <NavLink to="/umkmadmin" className="btn-switch">
+                                        UMKM
+                                    </NavLink>
+                                    <NavLink to="/" className="btn-logout">
+                                        <i className="bi bi-box-arrow-left"></i>
+                                        Logout
+                                    </NavLink>
+                                </div>
                             </div>
                             <div className="rw-card">
                                 <div className="form-group">
@@ -225,10 +239,12 @@ export default function Admin() {
                                         }
                                     />
                                 </div>
-                                <button className="save-btn" onClick={saveRW}>
-                                    <i className="bi bi-check-circle"></i>
-                                    Simpan Ketua RW
-                                </button>
+                                <div className="rw-action">
+                                    <button className="save-btn" onClick={saveRW}>
+                                        <i className="bi bi-check-circle"></i>
+                                        Simpan Ketua RW
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div className="rt-header">
@@ -236,16 +252,9 @@ export default function Admin() {
                                 <i className="bi bi-people-fill"></i>
                                 <h2>Manajemen Ketua RT</h2>
                             </div>
-                            <div className="rt-header-right">
-                                <NavLink to="/umkmadmin" className="btn-switch">UMKM</NavLink>
-                                <NavLink to="/" className="btn-logout">
-                                    <i className="bi bi-box-arrow-left"></i>
-                                    Logout
-                                </NavLink>
-                                <span>
-                                    Total {rtList.length} Unit RT
-                                </span>
-                            </div>
+                            <span>
+                                Total {rtList.length} Unit RT
+                            </span>
                         </div>
                         <div className="rt-grid">
                             {rtList.map((rt, index) => (

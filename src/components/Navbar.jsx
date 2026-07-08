@@ -37,7 +37,9 @@ const Navbar = () => {
     return (
         <header className="site-navbar">
             <div className="container navbar-inner">
-                <a className="brand" href="#beranda">Padukuhan Ngasem</a>
+                <NavLink className="brand" to="/">
+                    Padukuhan Ngasem
+                </NavLink>
                 {isMobile && (
                     <button
                         ref={toggleRef}

@@ -75,9 +75,11 @@ const Kontak = () => {
                     </p>
                 </div>
                 <div className="card reveal">
-                    <div className="card-icon">
-                        <i className="bi bi-person"></i>
-                    </div>
+                    <img
+                        src={dukuh?.foto}
+                        alt={dukuh?.nama}
+                        className="pengurus-avatar"
+                    />
                     <h3>Dukuh Ngasem</h3>
                     {dukuh ? (
                         <>
@@ -101,9 +103,11 @@ const Kontak = () => {
                     )}
                 </div>
                 <div className="card reveal">
-                    <div className="card-icon">
-                        <i className="bi bi-people"></i>
-                    </div>
+                    <img
+                        src={ketuaRW?.foto}
+                        alt={ketuaRW?.nama}
+                        className="pengurus-avatar"
+                    />
                     <h3>Ketua RW</h3>
                     {ketuaRW ? (
                         <>
@@ -136,13 +140,31 @@ const Kontak = () => {
                 <div className="rt-grid">
                     {dataRT.map((item) => (
                         <div className="rt-card" key={item.id}>
-                            <h4>{item.jabatan.replace("Ketua ", "")}</h4>
-                            <p>Ketua RT:</p>
-                            <p className="rt-card-p-value">{item.nama}</p>
-                            <a href={`https://wa.me/${formatWA(item.notelp)}`} target="_blank" rel="noopener noreferrer" className="rt-wa">
-                                <i className="bi bi-chat-left-text"></i>
-                                WhatsApp
-                            </a>
+                            <div className="rt-card-content">
+                                <div className="rt-info">
+                                    <h4>{item.jabatan.replace("Ketua ", "")}</h4>
+                                    <p>Ketua RT</p>
+                                    <p className="rt-card-p-value">
+                                        {item.nama}
+                                    </p>
+                                    <a
+                                        href={`https://wa.me/${formatWA(item.notelp)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="rt-wa"
+                                    >
+                                        <i className="bi bi-chat-left-text"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                                <div className="rt-photo">
+                                    <img
+                                        src={item.foto}
+                                        alt={item.nama}
+                                        className="rt-avatar"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

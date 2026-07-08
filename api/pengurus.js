@@ -10,13 +10,17 @@ export default async function handler(req, res) {
     try {
       const { data, error } = await supabase
         .from("pengurus")
-        .select("id, nama, jabatan, notelp")
+        .select("id, nama, jabatan, notelp, foto")
         .or('jabatan.ilike.Ketua RT%,jabatan.eq.Pak Dukuh,jabatan.eq.Ketua RW')
         .order("jabatan", { ascending: true });
       if (error) {
         return res.status(500).json({ error: error.message });
       }
-      return res.status(200).json(data);
+      const result = data.map((item) => ({
+        ...item,
+        foto: item.foto || "/default-pp.webp",
+      }));
+      return res.status(200).json(result);
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }

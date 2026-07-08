@@ -9,12 +9,14 @@ export default function Admin() {
         nama: "",
         notelp: "",
         jabatan: "Pak Dukuh",
+        foto: "",
     });
     const [ketuaRW, setKetuaRW] = useState({
         id: null,
         nama: "",
         notelp: "",
         jabatan: "Ketua RW",
+        foto: "",
     });
     const [rtList, setRtList] = useState([]);
     const [sambutan, setSambutan] = useState({
@@ -88,17 +90,18 @@ export default function Admin() {
         }
     }
     async function saveRT(rt) {
+        console.log("RT yang dikirim:", rt);
         try {
-            await fetch("/api/update-pengurus", {
+            const response = await fetch("/api/update-pengurus", {
                 method: "POST",
                 headers: {
-                "Content-Type": "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(rt),
             });
-            alert(`${rt.jabatan} berhasil diperbarui`);
-        } catch (error) {
-            console.log(error);
+            alert("Profil RT berhasil diperbarui");
+        } catch (err) {
+            console.log(err);
         }
     }
     async function saveSambutan() {
@@ -158,6 +161,21 @@ export default function Admin() {
                                             notelp: e.target.value,
                                         })
                                     }
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>Path Foto</label>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setDukuh({
+                                            ...dukuh,
+                                            file,
+                                            foto: URL.createObjectURL(file),
+                                        });
+                                    }}
                                 />
                             </div>
                             <button
@@ -239,6 +257,21 @@ export default function Admin() {
                                         }
                                     />
                                 </div>
+                                <div className="form-group">
+                                    <label>Path Foto</label>
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={(e) => {
+                                    const file = e.target.files[0];
+                                    setKetuaRW({
+                                        ...ketuaRW,
+                                        file,
+                                        foto: URL.createObjectURL(file),
+                                    });
+                                }}
+                                    />
+                                </div>
                                 <div className="rw-action">
                                     <button className="save-btn" onClick={saveRW}>
                                         <i className="bi bi-check-circle"></i>
@@ -261,44 +294,70 @@ export default function Admin() {
                                 <div className="rt-card" key={rt.id}>
                                     <div className="rt-card-top">
                                         <div className="rt-number">
-                                            {String(index + 1).padStart(
-                                            2,
-                                            "0"
-                                            )}
+                                            {String(index + 1).padStart(2, "0")}
                                         </div>
-                                        <div className="rt-badge"> {rt.jabatan} </div>
+                                        <div className="rt-badge">
+                                            {rt.jabatan}
+                                        </div>
                                     </div>
-                                    <div className="form-group">
-                                        <label>Nama Lengkap</label>
-                                        <input
-                                            type="text"
-                                            value={rt.nama || ""}
-                                            onChange={(e) => {
-                                            const updated = [...rtList];
-                                            updated[index].nama =
-                                                e.target.value;
-                                            setRtList(updated);
-                                            }}
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Nomor Telepon</label>
-                                        <input
-                                            type="text"
-                                            value={rt.notelp || ""}
-                                            onChange={(e) => {
-                                            const updated = [...rtList];
-                                            updated[index].notelp =
-                                                e.target.value;
-                                            setRtList(updated);
-                                            }}
-                                        />
+                                    <div className="rt-content">
+                                        <div className="rt-left">
+                                            <div className="form-group">
+                                                <label>Nama Lengkap</label>
+                                                <input
+                                                    type="text"
+                                                    value={rt.nama || ""}
+                                                    onChange={(e) => {
+                                                        const updated = [...rtList];
+                                                        updated[index].nama = e.target.value;
+                                                        setRtList(updated);
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="form-group">
+                                                <label>Nomor Telepon</label>
+                                                <input
+                                                    type="text"
+                                                    value={rt.notelp || ""}
+                                                    onChange={(e) => {
+                                                        const updated = [...rtList];
+                                                        updated[index].notelp = e.target.value;
+                                                        setRtList(updated);
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="rt-right">
+                                            <label
+                                                htmlFor={`foto-${rt.id}`}
+                                                className="rt-avatar-label"
+                                            >
+                                                <img
+                                                    src={rt.foto || "/default-pp.webp"}
+                                                    className="rt-avatar"
+                                                    alt={rt.nama}
+                                                />
+                                            </label>
+                                            <input
+                                                hidden
+                                                id={`foto-${rt.id}`}
+                                                type="file"
+                                                accept="image/*"
+                                                onChange={(e) => {
+                                                    const file = e.target.files[0];
+                                                    const updated = [...rtList];
+                                                    updated[index].file = file;
+                                                    updated[index].foto = URL.createObjectURL(file);
+                                                    setRtList(updated);
+                                                }}
+                                            />
+                                        </div>
                                     </div>
                                     <button
                                         className="save-btn"
                                         onClick={() => saveRT(rt)}
                                     >
-                                    <i className="bi bi-check-circle"></i>
+                                        <i className="bi bi-check-circle"></i>
                                         Simpan {rt.jabatan}
                                     </button>
                                 </div>

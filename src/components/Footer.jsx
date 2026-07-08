@@ -1,5 +1,11 @@
 import "../styles/footer.css";
 import { NavLink } from "react-router-dom";
+import {
+  FaInstagram,
+  FaWhatsapp,
+  FaFacebookF,
+  FaTiktok,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -12,6 +18,40 @@ const Footer = () => {
             seluruh warga Padukuhan Ngasem, Kalurahan
             Ngalang.
           </p>
+          <div className="footer-social">
+            <a
+              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <FaTiktok />
+            </a>
+          </div>
         </div>
         <div>
           <h4>Tautan</h4>

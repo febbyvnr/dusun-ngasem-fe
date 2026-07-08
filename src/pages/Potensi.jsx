@@ -80,7 +80,7 @@ const Potensi = () => {
                         <div className="potensi-chips">
                             <span className="potensi-chip"><Sprout size={14} />Padi</span>
                             <span className="potensi-chip"><Bean size={14} />Kacang</span>
-                            <span className="potensi-chip"><Bean size={14} />Kedelai</span>
+                            <span className="potensi-chip"><Bean size={14} />Jagung</span>
                         </div>
                     </div>
                     <div className="image">
@@ -122,15 +122,15 @@ const Potensi = () => {
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Jeruk</p>
+                        <p>Rambutan</p>
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Semangka</p>
+                        <p>Mangga</p>
                     </div>
                     <div className="horti-card">
                         <div className="horti-icon"><Vegan size={24} /></div>
-                        <p>Durian</p>
+                        <p>Kakao</p>
                     </div>
                 </div>
             </section>

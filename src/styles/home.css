@@ -711,3 +711,37 @@
       font-size: 14px;
     }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-avatar{
+    width: 190px;
+    height: 190px;
+    border-width: 6px;
+  }
+}
+@media (max-width: 767px) {
+  .about-box{
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .about-profile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-avatar{
+    width: 140px;
+    height: 140px;
+    border-width: 5px;
+  }
+
+  .about-sign{
+    justify-content: center;
+  }
+
+  .sign-info{
+    text-align: center;
+  }
+}

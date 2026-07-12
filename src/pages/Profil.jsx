@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/profil.css";
 import petawilayah from "../assets/peta-wilayah.jpg";
+import fotosejarah from "../assets/home-placeholder.png";
 
 export default function Profil() {
     useEffect(() => {
@@ -34,8 +35,8 @@ export default function Profil() {
                     <div className="sejarah-container">
                         <div className="sejarah-img reveal">
                             <img
-                                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
-                                alt="sawah"
+                                src={ fotosejarah }
+                                alt="sejarah"
                             />
                         </div>
                         <div className="sejarah-text reveal">
@@ -167,7 +168,7 @@ export default function Profil() {
                     </div>
                     <div className="kunjungi-img reveal">
                         <img
-                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+                            src={ fotosejarah }
                             alt="desa"
                         />
                     </div>

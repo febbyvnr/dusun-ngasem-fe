@@ -104,6 +104,7 @@ const Potensi = () => {
                         <div className="potensi-chips">
                             <span className="potensi-chip"><Beef size={14} />Sapi</span>
                             <span className="potensi-chip"><Beef size={14} />Kambing</span>
+                            <span className="potensi-chip"><Beef size={14} />Ayam</span>
                         </div>
                     </div>
                 </div>

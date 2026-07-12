@@ -61,6 +61,13 @@ export default function Admin() {
             console.log(error);
         }
     }
+    function convertDriveLink(url) {
+        const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+        if (match) {
+            return `https://drive.google.com/thumbnail?id=${match[1]}&szw=1000`;
+        }
+        return url;
+    }
     async function saveDukuh() {
         try {
             await fetch("/api/update-pengurus", {
@@ -68,7 +75,10 @@ export default function Admin() {
                 headers: {
                 "Content-Type": "application/json",
                 },
-                body: JSON.stringify(dukuh),
+                body: JSON.stringify({
+                    ...dukuh,
+                    foto: convertDriveLink(dukuh.foto),
+                }),
             });
             alert("Profil Pak Dukuh berhasil diperbarui");
         } catch (error) {
@@ -82,7 +92,10 @@ export default function Admin() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(ketuaRW),
+                body: JSON.stringify({
+                    ...ketuaRW,
+                    foto: convertDriveLink(ketuaRW.foto),
+                }),
             });
             alert("Ketua RW berhasil diperbarui");
         } catch (error) {
@@ -97,7 +110,10 @@ export default function Admin() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(rt),
+                body: JSON.stringify({
+                    ...rt,
+                    foto: convertDriveLink(rt.foto),
+                }),
             });
             alert("Profil RT berhasil diperbarui");
         } catch (err) {
@@ -164,18 +180,17 @@ export default function Admin() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>Path Foto</label>
+                                <label>Foto URL (Drive)</label>
                                 <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => {
-                                        const file = e.target.files[0];
+                                    type="text"
+                                    value={dukuh.foto || ""}
+                                    placeholder="Tempel link Google Drive"
+                                    onChange={(e) =>
                                         setDukuh({
                                             ...dukuh,
-                                            file,
-                                            foto: URL.createObjectURL(file),
-                                        });
-                                    }}
+                                            foto: e.target.value,
+                                        })
+                                    }
                                 />
                             </div>
                             <button
@@ -258,18 +273,17 @@ export default function Admin() {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label>Path Foto</label>
+                                    <label>Foto URL (Drive)</label>
                                     <input
-                                        type="file"
-                                        accept="image/*"
-                                        onChange={(e) => {
-                                    const file = e.target.files[0];
-                                    setKetuaRW({
-                                        ...ketuaRW,
-                                        file,
-                                        foto: URL.createObjectURL(file),
-                                    });
-                                }}
+                                        type="text"
+                                        value={ketuaRW.foto || ""}
+                                        placeholder="Tempel link Google Drive"
+                                        onChange={(e) =>
+                                            setKetuaRW({
+                                                ...ketuaRW,
+                                                foto: e.target.value,
+                                            })
+                                        }
                                     />
                                 </div>
                                 <div className="rw-action">
@@ -328,29 +342,19 @@ export default function Admin() {
                                             </div>
                                         </div>
                                         <div className="rt-right">
-                                            <label
-                                                htmlFor={`foto-${rt.id}`}
-                                                className="rt-avatar-label"
-                                            >
-                                                <img
-                                                    src={rt.foto || "/default-pp.webp"}
-                                                    className="rt-avatar"
-                                                    alt={rt.nama}
+                                            <div className="form-group">
+                                                <label>Foto URL (Drive)</label>
+                                                <input
+                                                    type="text"
+                                                    value={rt.foto || ""}
+                                                    placeholder="Tempel link Google Drive"
+                                                    onChange={(e) => {
+                                                        const updated = [...rtList];
+                                                        updated[index].foto = e.target.value;
+                                                        setRtList(updated);
+                                                    }}
                                                 />
-                                            </label>
-                                            <input
-                                                hidden
-                                                id={`foto-${rt.id}`}
-                                                type="file"
-                                                accept="image/*"
-                                                onChange={(e) => {
-                                                    const file = e.target.files[0];
-                                                    const updated = [...rtList];
-                                                    updated[index].file = file;
-                                                    updated[index].foto = URL.createObjectURL(file);
-                                                    setRtList(updated);
-                                                }}
-                                            />
+                                            </div>
                                         </div>
                                     </div>
                                     <button

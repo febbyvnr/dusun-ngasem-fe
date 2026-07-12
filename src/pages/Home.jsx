@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import profileImg from "../assets/profile-placeholder.jpg";
 import desaImg from "../assets/home-placeholder.jpeg";
 import { Users, House, Map, Ruler, Music, Sprout, Beef, MessageCircle } from "lucide-react";
 
@@ -27,6 +26,11 @@ const Home = () => {
         nama: "",
         jabatan: "",
     });
+    const [dukuh, setDukuh] = useState({
+        nama: "",
+        jabatan: "",
+        foto: "",
+    });
 
     useEffect(() => {
         const fetchSambutan = async () => {
@@ -51,8 +55,23 @@ const Home = () => {
                 console.error("Gagal ambil UMKM:", error);
             }
         };
+        const fetchDukuh = async () => {
+            try {
+                const res = await fetch("/api/pengurus");
+                const data = await res.json();
+                const dukuhData = data.find(
+                    (item) => item.jabatan === "Pak Dukuh"
+                );
+                if (dukuhData) {
+                    setDukuh(dukuhData);
+                }
+            } catch (error) {
+                console.error("Gagal ambil data dukuh:", error);
+            }
+        };
         fetchSambutan();
         fetchUMKM();
+        fetchDukuh();
     }, []);
 
     const formatWA = (num) => {
@@ -133,6 +152,13 @@ const Home = () => {
                                 <small>{sambutan.jabatan || "Memuat jabatan..."}</small>
                             </div>
                         </div>
+                    </div>
+                    <div className="about-profile">
+                        <img
+                            src={dukuh?.foto || "/default-pp.webp"}
+                            alt={dukuh?.nama}
+                            className="about-avatar"
+                        />
                     </div>
                 </div>
             </section>

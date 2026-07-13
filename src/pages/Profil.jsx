@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "../styles/profil.css";
 import petawilayah from "../assets/peta-wilayah.jpg";
-import fotosejarah from "../assets/home-placeholder.png";
+import fotosejarah from "../assets/sejarah.webp";
+import fotokunjungi from "../assets/kunjungi.webp";
 
 export default function Profil() {
     useEffect(() => {
@@ -168,7 +169,7 @@ export default function Profil() {
                     </div>
                     <div className="kunjungi-img reveal">
                         <img
-                            src={ fotosejarah }
+                            src={ fotokunjungi }
                             alt="desa"
                         />
                     </div>

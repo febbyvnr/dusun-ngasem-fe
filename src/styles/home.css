@@ -364,17 +364,17 @@
 
 .image-1 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url("../assets/home-placeholder.png");
+    url("../assets/home-placeholder.webp");
 }
 
 .image-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url("../assets/home-placeholder.png");
+    url("../assets/home-placeholder.webp");
 }
 
 .image-3 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url("../assets/home-placeholder.png");
+    url("../assets/home-placeholder.webp");
 }
 
 .product-footer {

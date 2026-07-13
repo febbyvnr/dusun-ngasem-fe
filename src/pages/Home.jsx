@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import desaImg from "../assets/home-placeholder.jpeg";
+import desaImg from "../assets/home-placeholder.webp";
 import { Users, House, Map, Ruler, Music, Sprout, Beef, MessageCircle } from "lucide-react";
 
 const Home = () => {

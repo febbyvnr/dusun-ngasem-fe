@@ -28,7 +28,7 @@ body {
 }
 
 .section-hero {
-    background: url("../assets/overall-umkm.png") center/cover no-repeat;
+    background: url("../assets/home-placeholder.webp") center/cover no-repeat;
     height: 380px !important;
     display: flex;
     align-items: center;
@@ -74,7 +74,7 @@ body {
 }
 
 .admin-hero {
-   background: url("../assets/overall-umkm.png") center/cover no-repeat;
+   background: url("../assets/home-placeholder.webp") center/cover no-repeat;
     height: 240px !important;
     display: flex;
     align-items: center;

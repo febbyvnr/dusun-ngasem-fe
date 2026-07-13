@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import "../styles/potensi.css";
 import { Music, Sprout, Beef, Bean, Vegan } from "lucide-react";
-import sanggarTari from "../assets/sanggar-tari.png";
+import sanggarTari from "../assets/tari.jpg";
+import sawah from "../assets/sawah.png";
+import peternakan from "../assets/peternakan.png";
 
 const Potensi = () => {
     useEffect(() => {
@@ -84,14 +86,14 @@ const Potensi = () => {
                         </div>
                     </div>
                     <div className="image">
-                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" />
+                        <img src={ sawah } />
                     </div>
                 </div>
             </section>
             <section className="peternakan-section reveal">
                 <div className="potensi-container">
                     <div className="image">
-                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" />
+                        <img src={ peternakan } />
                     </div>
                     <div className="text">
                         <span className="badge">PETERNAKAN</span>
@@ -139,19 +141,19 @@ const Potensi = () => {
                 <div className="kesenian-container">
                     <div className="kesenian-text">
                         <span className="badge">KESENIAN</span>
-                        <h2>Sanggar Tari Ngasem</h2>
+                        <h2>Sanggar Tari Putri Ngasem</h2>
                         <p>
                             Wadah bagi generasi muda untuk melestarikan tari
                             tradisional Jawa. Sanggar ini bukan sekadar tempat
                             berlatih, namun pusat denyut budaya di padukuhan kami.
                         </p>
-                        <a 
+                        {/* <a 
                             href="https://wa.me/621234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20Sanggar%20Tari%20Ngasem" 
                             target="_blank" 
                             rel="noopener noreferrer"
                         >
                             <button>Hubungi Sanggar Tari</button>
-                        </a>
+                        </a> */}
                     </div>
                     <div className="kesenian-img">
                         <img src={sanggarTari} alt="Sanggar Tari" />

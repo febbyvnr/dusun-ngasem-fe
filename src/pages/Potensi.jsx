@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/potensi.css";
 import { Music, Sprout, Beef, Bean, Vegan } from "lucide-react";
-import sanggarTari from "../assets/tari.jpg";
+import sanggarTari from "../assets/tari.JPG";
 import sawah from "../assets/sawah.png";
 import peternakan from "../assets/peternakan.png";
 

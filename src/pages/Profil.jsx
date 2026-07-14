@@ -160,10 +160,17 @@ export default function Profil() {
                             </div>
                         </div>
                         <div className="info-item">
-                            <i className="bi bi-telephone"></i>
+                            <i className="bi bi-instagram"></i>
                             <div className="info-text">
-                                <span>TELEPON</span>
-                                <p>+62 812-3456-7890</p>
+                                <span>INSTAGRAM | YOUTUBE</span>
+                                <p>@padukuhanngasem</p>
+                            </div>
+                        </div>
+                        <div className="info-item">
+                            <i className="bi bi-tiktok"></i>
+                            <div className="info-text">
+                                <span>TIKTOK</span>
+                                <p>@padukuhan.ngasem</p>
                             </div>
                         </div>
                     </div>

@@ -2,8 +2,7 @@ import "../styles/footer.css";
 import { NavLink } from "react-router-dom";
 import {
   FaInstagram,
-  FaWhatsapp,
-  FaFacebookF,
+  FaYoutube,
   FaTiktok,
 } from "react-icons/fa";
 
@@ -20,7 +19,15 @@ const Footer = () => {
           </p>
           <div className="footer-social">
             <a
-              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              href="https://www.youtube.com/@padukuhanngasem"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://www.instagram.com/padukuhanngasem?igsh=cXo4MGh3c2VmcGE4&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -28,23 +35,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp />
-            </a>
-            <a
-              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://www.instagram.com/padukuhanngasem?igsh=bWkzeDRsdjQ1eGQ1"
+              href="https://www.tiktok.com/@padukuhan.ngasem?_r=1&_t=ZS-97zTaOyH7PV"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/profil.css";
-import petawilayah from "../assets/peta-wilayah.jpg";
+import petawilayah from "../assets/peta-wilayah.png";
 import fotosejarah from "../assets/sejarah.webp";
 import fotokunjungi from "../assets/kunjungi.webp";
 
@@ -140,10 +140,10 @@ export default function Profil() {
                     <div className="geo-batas reveal">
                         <h3><i className="bi bi-geo"></i>Batas Wilayah</h3>
                         <ul>
-                            <li>Utara: Padukuhan lain</li>
-                            <li>Selatan: Perbukitan</li>
-                            <li>Timur: Lahan pertanian</li>
-                            <li>Barat: Permukiman warga</li>
+                            <li>Utara: Ngalang</li>
+                            <li>Selatan: Ngalang</li>
+                            <li>Timur: Kecamatan Nglipar</li>
+                            <li>Barat: Ngalang</li>
                         </ul>
                     </div>
                 </div>
